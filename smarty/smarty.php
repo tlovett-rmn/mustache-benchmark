@@ -1,6 +1,6 @@
 <?php
 require dirname(__FILE__). '/../benchmark.php';
-require dirname(__FILE__). '/../libs/smarty/Smarty.class.php';
+require dirname(__FILE__). '/../libs/smarty/libs/Smarty.class.php';
 $smarty = new Smarty();
 
 $smarty->setTemplateDir(dirname(__FILE__). '/templates');
@@ -27,7 +27,7 @@ function test_loop() {
     $smarty->fetch($comment_native);
 }
 
-$simpleResults =  benchmark(10, 10000, 'test_simple', true);
+$simpleResults =  benchmark(10, 10000, 'test_simple');
 echo 'Simple Test: ', $simpleResults['time'], 'ms, ', $simpleResults['PhpMemory'], 'byte PHP, ', $simpleResults['RealMemory'], 'byte System',PHP_EOL;
-$loopResults =  benchmark(10, 10000, 'test_loop', true);
+$loopResults =  benchmark(10, 10000, 'test_loop');
 echo 'Loop Test: ', $loopResults['time'], 'ms, ', $loopResults['PhpMemory'], 'byte PHP, ', $loopResults['RealMemory'], 'byte System',PHP_EOL;

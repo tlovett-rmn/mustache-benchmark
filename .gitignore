@@ -1,1 +1,5 @@
-cache/
+*/cache/mustache.php/*
+*/cache/lightncandy/*
+*/cache/*
+*/compiles/*
+results.txt

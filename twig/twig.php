@@ -24,7 +24,7 @@ function test_loop() {
     $twig->render('comment.html', $data['comment_view']);
 }
 
-$simpleResults =  benchmark(10, 10000, 'test_simple', true);
+$simpleResults =  benchmark(10, 10000, 'test_simple');
 echo 'Simple Test: ', $simpleResults['time'], 'ms, ', $simpleResults['PhpMemory'], 'byte PHP, ', $simpleResults['RealMemory'], 'byte System',PHP_EOL;
-$loopResults =  benchmark(10, 10000, 'test_loop', true);
+$loopResults =  benchmark(10, 10000, 'test_loop');
 echo 'Loop Test: ', $loopResults['time'], 'ms, ', $loopResults['PhpMemory'], 'byte PHP, ', $loopResults['RealMemory'], 'byte System',PHP_EOL;

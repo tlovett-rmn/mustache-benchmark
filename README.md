@@ -43,32 +43,38 @@ Enviroments:
 
 - GNU/Linux 3.2.0-34-virtual
 - Php 5.3.10
-- Mustache 2.4.1
-- Twig 1.15.0-DEV
-- Smarty 3.1.15
+- Mustache.php 2.70
+- LightnCandy 0.16
+- Twig 1.16.21
+- Smarty 3.1.21
 
 Under the condition of 10000 times tests with 10 times repeat to achieve more accuracy, the benchmark results are:
 
--	NATIVE
+```
+=== Native PHP ===
+Simple Test: 433.46125488281ms, 249.6byte PHP, 0byte System
+Loop Test: 397.63986816406ms, 232.8byte PHP, 0byte System
 
-	Simple Test: 150.80124511719ms, 388.8byte PHP, 0byte System
 
-	Loop Test: 115.1564453125ms, 401.6byte PHP, 0byte System
+=== Mustache.php ===
+Simple Test: 3634.5178222656ms, 13053.6byte PHP, 26214.4byte System
+Loop Test: 9453.0949707031ms, 3756byte PHP, 0byte System
 
--	MUSTACHE
 
-	Simple Test: 653.93806152344ms, 13515.2byte PHP, 26214.4byte System
+=== LightnCandy ===
+Simple Test: 1379.8023681641ms, 7284byte PHP, 26214.4byte System
+Loop Test: 3476.5112060547ms, 541164.8byte PHP, 707788.8byte System
 
-	Loop Test: 1284.2868408203ms, 2468byte PHP, 0byte System
 
--	TWIG
+=== Twig ===
+Simple Test: 2651.5919921875ms, 210796.8byte PHP, 209715.2byte System
+Loop Test: 7742.2057617188ms, 21094.4byte PHP, 26214.4byte System
 
-	Simple Test: 461.39296875ms, 81692byte PHP, 52428.8byte System
 
-	Loop Test: 1142.9485595703ms, 14024byte PHP, 26214.4byte System
+=== Smarty ===
+Simple Test: 1988.1653808594ms, 338788byte PHP, 340787.2byte System
+Loop Test: 2171.2811523437ms, 10644byte PHP, 0byte System
 
--	SMARTY
 
-	Simple Test: 747.65390625ms, 255336byte PHP, 262144byte System
 
-	Loop Test: 915.72463378906ms, 6268byte PHP, 0byte System
+```
